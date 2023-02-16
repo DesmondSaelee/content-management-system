@@ -18,7 +18,7 @@ let initialQuestions = [
         type: 'list',
         name: 'choice',
         message: 'select from the options below',
-        choices: ['View all departments?','View all roles?','View all employees?', 'Add a department?', 'Add an employee?', 'Update and employee role?']
+        choices: ['View all departments?','View all roles?','View all employees?', 'Add a department?', 'Add an employee?', 'Add a Role?', 'Update and employee role?']
     },
     
 ];
@@ -40,6 +40,8 @@ function init() {
             addEmployee()
         } else if (user_choice === "Update and employee role?") {
             updateEmployee()
+        } else if (user_choice === "Add a Role?") {
+            addRole()
         }
     })
 }
@@ -91,6 +93,70 @@ function addDepartment() {
     })
     
 };
+
+function addRole() {
+    inquirer.prompt([
+        
+          {
+            name: 'role_name',
+            message: 'What is the name of the role?'
+          },
+          {
+            name: 'role_salary',
+            message: 'What is the salary of the role?'
+
+          },
+          {
+            name: 'role_department',
+            message: 'What is the department of the role?'
+
+          },
+    ]) 
+};
+
+function addEmployee() {
+    inquirer.prompt([
+        
+          {
+            name: 'first_name',
+            message: 'What is the employees first name?'
+          },
+          {
+            name: 'last_name',
+            message: 'What is the employees last name?'
+          },
+          {
+            name: 'employee_role',
+            message: 'What is the role of the employee?'
+
+          },
+          {
+            name: 'manager',
+            message: 'Who is the manager of the employee?'
+
+          },
+    ]) 
+};
+
+function updateEmployee() {
+    inquirer.prompt([
+        
+          {
+            type: 'list',
+            name: 'employee_choices',
+            message: 'Which employee would you like to update?',
+            choices: ['John doe', 'Mike Chan', 'Ashley Rodriguez', 'Kevin Tupik', 'Kunal Singh', 'Malia Brown', 'Sarah Lourd', 'Tom Allen']
+          },
+          {
+            type: 'list',
+            name: 'new_role',
+            message: 'What is the employees new role?',
+            choices:['Sales Lead', 'Salesperson', 'Lead Engineer', 'Software Engineer', 'Account Manager', 'Accountant', 'Legal Team Lead', 'Lawyer']
+          }
+    ]) 
+};
+
+
 
 init();
 
