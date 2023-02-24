@@ -1,6 +1,6 @@
 # content-management-system
 
-## Walk-through video link :
+## Walk-through video link : https://drive.google.com/file/d/1YDJr8WQ23wCvF8OneBLC5ErZM9p1UnJR/view
 
 ## Description:
 ### This project has the ability to help you organize a business department, roles, employees, etc. 
